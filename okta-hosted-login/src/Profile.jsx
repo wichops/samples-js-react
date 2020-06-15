@@ -25,6 +25,13 @@ const Profile = () => {
     } else {
       authService.getUser().then((info) => {
         setUserInfo(info);
+      }).then(() => {
+        const myHeaders = new Headers();
+        myHeaders.append('Authorization', `Bearer ${authState.accessToken}`);
+
+        fetch('.netlify/functions/secure', { headers: myHeaders })
+          .then(stream => stream.json())
+          .then(data => console.info('AAH SI O QUE', data))
       });
     }
   }, [authState, authService]); // Update if authState changes

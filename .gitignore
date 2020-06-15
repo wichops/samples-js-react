@@ -14,3 +14,7 @@ okta-hosted-login/src/.samples.config.js--
 .samples.config.js--
 testenv
 .yalc
+
+# Local Netlify folder
+.netlify
+
