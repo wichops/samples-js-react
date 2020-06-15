@@ -19,6 +19,7 @@ import Home from './Home';
 import Messages from './Messages';
 import Navbar from './Navbar';
 import Profile from './Profile';
+import Server from './Server';
 
 const App = () => (
   <Router>
@@ -29,6 +30,7 @@ const App = () => (
         <Route path="/implicit/callback" component={LoginCallback} />
         <SecureRoute path="/messages" component={Messages} />
         <SecureRoute path="/profile" component={Profile} />
+        <SecureRoute path="/server" component={Server} />
       </Container>
     </Security>
   </Router>

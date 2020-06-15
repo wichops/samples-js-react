@@ -33,16 +33,6 @@ const Home = () => {
     authService.login('/');
   };
 
-  const resourceServerExamples = [
-    {
-      label: 'Node/Express Resource Server Example',
-      url: 'https://github.com/okta/samples-nodejs-express-4/tree/master/resource-server',
-    },
-    {
-      label: 'Java/Spring MVC Resource Server Example',
-      url: 'https://github.com/okta/samples-java-spring-mvc/tree/master/resource-server',
-    },
-  ];
 
   if (authState.isPending) {
     return (
@@ -74,17 +64,12 @@ const Home = () => {
             {' '}
             page to take a look inside the ID token.
           </p>
-          <h3>Next Steps</h3>
-          <p>Currently this application is a stand-alone front end application.  At this point you can use the access token to authenticate yourself against resource servers that you control.</p>
-          <p>This sample is designed to work with one of our resource server examples.  To see access token authentication in action, please download one of these resource server examples:</p>
-          <ul>
-            {resourceServerExamples.map((example) => <li key={example.url}><a href={example.url}>{example.label}</a></li>)}
-          </ul>
           <p>
-            Once you have downloaded and started the example resource server, you can visit the
-            <a href="/messages">My Messages</a>
+            Visit 
             {' '}
-            page to see the authentication process in action.
+            <a href="/server">Server Test</a>
+            {' '}
+            to test communicating to a secure server route.
           </p>
         </div>
         )}
