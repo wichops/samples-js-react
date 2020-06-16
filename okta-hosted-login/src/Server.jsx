@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useOktaAuth } from '@okta/okta-react';
 import { Header, Card, Button } from 'semantic-ui-react';
 
+import config from './config';
+
 const Profile = () => {
-  const { authState, authService } = useOktaAuth();
-  const [token, setToken] = useState(null);
+  const { authState } = useOktaAuth();
   const [loading, setLoading] = useState(false);
   const [status, setStatus] = useState(0);
   const [body, setBody] = useState('{}');
@@ -14,8 +15,8 @@ const Profile = () => {
     const myHeaders = new Headers();
     myHeaders.append('Authorization', `Bearer ${authState.accessToken}`);
 
-    fetch('https://dry-cliffs-97591.herokuapp.com/secure', { headers: myHeaders })
-      .then(response => {
+    fetch(`${config.apiUrl}/secure`, { headers: myHeaders })
+      .then((response) => {
         setLoading(false);
         setStatus(response.status);
         return response.text();
