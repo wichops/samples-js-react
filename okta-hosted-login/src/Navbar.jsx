@@ -35,6 +35,9 @@ const Navbar = () => {
             Messages
           </Menu.Item>
           )}
+          <Menu.Item as="a" href="/server">
+            Test Server
+          </Menu.Item>
           {authState.isAuthenticated && <Menu.Item id="profile-button" as="a" href="/profile">Profile</Menu.Item>}
           {authState.isAuthenticated && <Menu.Item id="logout-button" as="a" onClick={logout}>Logout</Menu.Item>}
           {!authState.isPending && !authState.isAuthenticated && <Menu.Item as="a" onClick={login}>Login</Menu.Item>}

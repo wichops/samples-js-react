@@ -26,11 +26,11 @@ const App = () => (
     <Security {...config.oidc}>
       <Navbar />
       <Container text style={{ marginTop: '7em' }}>
-        <Route path="/" exact component={Home} />
+        <Route path="/" component={Home} />
+        <Route path="/server" component={Server} />
         <Route path="/implicit/callback" component={LoginCallback} />
         <SecureRoute path="/messages" component={Messages} />
         <SecureRoute path="/profile" component={Profile} />
-        <SecureRoute path="/server" component={Server} />
       </Container>
     </Security>
   </Router>

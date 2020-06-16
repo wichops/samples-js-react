@@ -26,7 +26,7 @@ const Messages = () => {
     if (authState.isAuthenticated) {
       const { accessToken } = authState;
       /* global fetch */
-      fetch(config.resourceServer.messagesUrl, {
+      fetch(config.apiUrl + '/api/messages', {
         headers: {
           Authorization: `Bearer ${accessToken}`,
         },
@@ -39,7 +39,7 @@ const Messages = () => {
         })
         .then((data) => {
           let index = 0;
-          const formattedMessages = data.messages.map((message) => {
+          const formattedMessages = data.map((message) => {
             const date = new Date(message.date);
             const day = date.toLocaleDateString();
             const time = date.toLocaleTimeString();

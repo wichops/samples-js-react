@@ -6,12 +6,11 @@ export default {
   oidc: {
     clientId: CLIENT_ID,
     issuer: ISSUER,
-    redirectUri: 'https://adoring-joliot-242a3b.netlify.app/implicit/callback',
+    redirectUri: 'http://localhost:8080/implicit/callback',
+    // redirectUri: 'https://adoring-joliot-242a3b.netlify.app/implicit/callback',
     scopes: ['openid', 'profile', 'email'],
     pkce: true,
     disableHttpsCheck: OKTA_TESTING_DISABLEHTTPSCHECK,
   },
-  resourceServer: {
-    messagesUrl: 'http://localhost:8000/api/messages',
-  },
+  apiUrl: 'https://dry-cliffs-97591.herokuapp.com',
 };
